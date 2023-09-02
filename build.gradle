@@ -1,0 +1,154 @@
+
+import java.text.SimpleDateFormat
+
+defaultTasks 'hello'
+
+task('hello').doLast {
+    println "hi nish xxxb nish"
+}
+
+println 'iiii'
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+sdf.setTimeZone(TimeZone.getTimeZone("UTC"))
+
+println "test" + sdf.format(new Date())
+
+say()
+
+void say() {
+    println "nishinish"
+}
+
+say()
+
+int doubleIt(int i) {
+
+    i * 3
+    //return 8
+    return 11
+}
+
+println doubleIt(3)
+
+def x = 3
+x = "lolo"
+
+println x
+
+int y = 3
+//y = "test"
+y = 27
+
+println y
+
+def s3 = """A
+String"""
+
+println s3
+
+def qq = 99
+
+println "qq is $qq "
+
+def course = "shit"
+
+println "im training in ${course.toUpperCase()}"
+
+class Person {
+    String name
+    Integer age
+
+    Person(name, age) {
+        this.name = name
+        this.age = age
+    }
+
+
+}
+
+def p = new Person("test", 3)
+println p.name
+
+Map m = new HashMap()
+
+m.put("foo", "Fred")
+
+println m.get("foo")
+
+m.foo = "r"
+println m.get("foo")
+
+m.nish = "qor"
+
+println m.get("nish")
+
+def xxxx = { parameter, r ->
+    //println popo
+    println "shit u not"
+    println parameter
+    return 3
+}
+
+def yyyy(Integer rr2, closure) {
+    closure(rr2) * 2
+}
+
+//println xxxx()
+println xxxx(18, 9)
+println xxxx(null, null)
+println xxxx
+
+println yyyy(89, { Integer a -> return a + 10})
+
+def OneArgMethod(closure) {
+    closure.delegate = this
+    closure() * 2
+}
+
+println OneArgMethod({10})
+
+def i = OneArgMethod ({
+    def y89 = 3
+    y89* 2
+})
+
+assert i == 12
+
+
+[15,25,35].each { iii9 ->
+    iii9 = iii9 * 100
+    println iii9
+}
+
+class People {
+    String name = "Fred"
+
+    def nameSayer = ({ a ->
+        println a + name
+    })
+}
+
+def p11111 = new People()
+
+p11111.nameSayer(897209);
+
+
+class abc {
+    String theName
+
+    abc (theName) {
+        this.theName = theName
+    }
+
+    def rrr(closure) {
+        closure.delegate = this
+        closure()
+    }
+}
+
+abc a109 = new abc("name")
+
+a109.rrr({
+    println theName
+})
