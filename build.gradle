@@ -147,7 +147,7 @@ class abc {
     }
 }
 
-abc a109 = new abc("name")
+abc a109 = new abc("xyrex")
 
 a109.rrr({
     println theName
